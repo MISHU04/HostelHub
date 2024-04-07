@@ -1,0 +1,230 @@
+/* ComplaintStyles.css */
+
+/* Global styles */
+
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: url("backk2.avif") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+  }
+
+/* .logo img {
+    width: 100px;
+    height: auto;
+} */
+
+.form-box {
+    /* background-color: #f5f5f5; */
+    padding: 20px 50px;
+    border-radius: 8px;
+    margin-top: 50px;
+    /* box-shadow: 0 2px 4px #fff; */
+}
+
+.input-box {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.navigation a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform .5s;
+  }
+  .navigation a:hover::after{
+    transform: scaleX(1);
+  }
+  .navigation .btnLogin-popup{
+    width: 100px;
+    height: 50px;
+    background: transparent;
+    outline: none;
+    margin-left: 40px;
+    border: 2px solid white;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    transition: -5s;
+  }.navigation .btnLogin-popup:hover{
+    background: white;
+    color: black;
+  }
+  .wrapper{
+  position: relative;
+  width: 55%;
+  height: 80%;
+  background: transparent;
+  border: 2px solid rgba(255,255,255,.5);
+  border-radius: 20px;
+  box-shadow: 30px 15px 35px 0 rgba(23, 20, 20, 0.995);
+  /* backdrop-filter: blur(70px); */
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  margin-top: 12%;
+  }
+  .wrapper .form-box{
+    width:100%;
+    height: auto;
+    padding: 40px;
+  }
+  .form-box h2{
+    font-size: 4em;
+    text-align: center;
+    color: rgb(1, 9, 9);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .input-box{
+    position: relative;
+    width: 100%;
+    margin: 50px 0;
+    border-bottom: 2px solid black;
+  }
+  .input-box label{
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: .5s;
+  }
+  .input-box input:focus~label,
+  .input-box input:valid~label{
+    top: -5px;
+  }
+  
+  .input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0 35px 0 5px;
+  }
+  .input-box .icon{
+  position: absolute;
+  right: 8px;
+  }
+  .remember-forget{
+    font-weight: 500;
+    margin: -15px 0 15px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .remember-forget label input{
+    accent-color: #162938;
+    margin-right: 5px;
+  }
+  .remember-forget a{
+    text-decoration: none;
+  }
+  .remember-forget a:hover{
+    text-decoration: underline;
+  }
+  .btn{
+  width: 40%;
+  height: 40px;
+  background: #090b0d;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: rgb(105, 122, 152);
+  font-size: 1em;
+  font-weight: 500;
+  margin-left: 30%;
+  }
+  .login-register{
+    font-weight: 500;
+    margin: 25px 10px 25px;
+    display: flex;
+    text-align: center;
+  }
+  .login-register p a{
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .login-register p a:hover{
+    text-decoration: underline;
+  }
+  .issue{
+    margin: 45px 0 125px;
+  }
+  .avenue{
+    color:rgb(233, 91, 119);
+    font-size: 17px;
+    background:rgb(237, 212, 179);
+  }
+  .phone{
+    outline: 0;
+  }
+  .phone:valid{
+    border-color: green;
+  }
+  .phone:invalid{
+    border-color: red;
+  }
+  .issue{
+    position: relative;
+    width: 100%;
+    margin: 50px 0;
+    border-bottom: 2px black double;
+    /* border-bottom: 2px solid rgb(230, 24, 24); */
+  }
+  .issue label{
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: .5s;
+  }
+  .issue input:focus~label,
+  .issue input:valid~label{
+    top: -5px;
+  }
+  
+  .issue input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0 35px 0 5px;
+  }
+
+/* Add more styles as needed */

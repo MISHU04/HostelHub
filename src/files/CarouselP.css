@@ -1,0 +1,37 @@
+.d-block1{
+    margin-left: 0;
+    left: 0%;
+}
+.carousel-caption:hover {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background for captions */
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  .carousel-caption h3:hover,
+  .carousel-caption p:hover {
+    color: #fff; /* White text color */
+  }
+  .carousel-item img{
+    /* height: auto;
+    width: 100vh; */
+    /* left: 200px; */
+    /* padding: 10px 10px; */
+    display: flex;
+    margin-top: 80px;
+    margin-left:350px;
+    margin-right: 10%;
+    /* align-items: center; */
+    justify-content: center;
+    border-radius: 5px;
+    /* position: absolute; */
+        /* top: 20%; */
+        /* left: 5%; 
+        right: 5%; */
+        background-attachment:fixed ;
+        width: 90%;
+        height: 70%;
+        object-fit: cover; object-position: center center;
+        opacity: 1; transition: opacity 500ms ease 0s; max-height: 90vh;
+
+  }

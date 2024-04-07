@@ -1,0 +1,18 @@
+/* .body{
+    background-color: #c6f4f0;
+    background: scroll;
+}
+.d-block w-100{
+    position: absolute;
+    top: 20%;
+    left: 5%; 
+    right: 0%;
+    background-attachment:fixed ;
+    width: 80%;
+    height: 50%;
+    object-fit: cover; object-position: center center;
+    opacity: 1; transition: opacity 500ms ease 0s; max-height: 90vh;
+} */
+.wrapper{
+    background-image: url('back2.jpg');
+}
