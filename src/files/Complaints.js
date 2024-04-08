@@ -2,7 +2,7 @@ import React from 'react'
 // import Navbarr from '../components/Navbarr';
 // import propTypes from 'prop-types'
 import './ComplaintStyles.css';
-import ganga1 from "../components/ganga1.jpg";
+// import ganga1 from "../components/ganga1.jpg";
 
 function Complaints(){
     return(

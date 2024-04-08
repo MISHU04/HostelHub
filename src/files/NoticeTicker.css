@@ -1,0 +1,25 @@
+.row{
+    position: relative;
+    margin-top: 50%;
+    margin-left: 30%;
+}
+.fa-fast-forward{
+    position: absolute;
+    padding: 9px 0 0 8px;
+    font-size: 18px;
+    color: red;
+}
+.news-ticker{
+    background: #eee;
+    box-sizing: content-box;
+    height: 20%;
+    overflow: hidden;
+    padding: 5px 10px 10px 10px;
+}
+.news-ticker ul{
+    padding: 0;
+    margin-left: 30px;
+    list-style: none;
+    animation: ticker 12s infinite;
+    animation-timing-function: cubic-bezier(1,0,0.5,0);
+}
