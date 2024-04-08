@@ -9,6 +9,7 @@
     height: 100%;
     background: url("backk2.avif") no-repeat;
     background-size: cover;
+    /* background-color: lightslategray; */
     background-attachment: fixed;
     background-position: center;
 }

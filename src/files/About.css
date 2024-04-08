@@ -1,0 +1,42 @@
+
+/* css */
+.section-white{
+    background: #fff;
+    padding: 120px 0;
+    /* background: url("aboutbackground.avif") no-repeat; */
+    background-size: cover;
+    height: auto;
+    width: 100%;
+    /* margin-left: 0; */
+}
+
+.team-item{
+    background: #f4f5f6;
+    text-align: center;
+    margin: 20px 0;
+    padding: 50px 20px 40px 20px;
+    border-radius: 8px 8px;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+}
+.team-item:hover{
+    background: #6c7392;
+    color:white;
+}
+ .wr{
+    display: flex;
+  justify-content: center; /* Center contents horizontally */
+   align-items: center; /* Center contents vertically */
+  height: auto; /*Full viewport height*/
+  position: relative;
+  margin-top: 4%;
+  /* margin-left: 1%;  */
+  background-attachment:fixed ;
+  width: 100%;
+  object-fit: cover; object-position: center center;
+  opacity: 1; 
+  overflow-x: hidden;
+} 

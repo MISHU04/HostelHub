@@ -7,7 +7,7 @@
 }
 .NavbarItems{
     display: flex;
-    background-color: transparent;
+    background-color: rgb(165, 166, 162);
     justify-content: space-between;
     align-items: center;
     padding: 0 30px;

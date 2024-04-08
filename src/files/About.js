@@ -3,7 +3,7 @@ import './About.css';
 function About(){
     let message = "Learning to write programs stretches your mind, and helps you think better, creates a way of thinking about things that I think is helpful in all domains."
     return(
-        <div className='wrapper'>
+        <div className='wr'>
            <section className="section-white">
             <div className="container">
                 <div className="row">
@@ -28,14 +28,9 @@ function About(){
                                 <i className="fa fa- twitter"></i>
                                 </a></li>
 
-                                <li><a href="https://www.linkedin.com/" className="LinkedIn">LinkedIn
-                                <i className="fa fa- LinkedIn"></i>
+                                <li><a href="https://www.linkedin.com/" className="LinkedIn">
+                                <i class="fa-brands fa-linkedin"></i>
                                 </a></li>
-
-                                <li><a href="https://www.facebook.com/" className="Facebook">Facebook
-                                <i className="fa fa- Facebook"></i>
-                                </a></li>
-
                            </ul>
                         </div>
                     </div>
@@ -54,14 +49,9 @@ function About(){
                                 <i className="fa fa- twitter"></i>
                                 </a></li>
 
-                                <li><a href="https://www.linkedin.com/" className="LinkedIn">LinkedIn
-                                <i className="fa fa- LinkedIn"></i>
-                                </a></li>
-
-                                <li><a href="https://www.facebook.com/" className="Facebook">Facebook
-                                <i className="fa fa- Facebook"></i>
-                                </a></li>
-
+                                <li><a href="https://www.linkedin.com/" className="LinkedIn">
+                                <i class="fa-brands fa-linkedin"></i>
+                                </a></li>                                
                            </ul>
                         </div>
                     </div>
@@ -80,13 +70,10 @@ function About(){
                                 <i className="fa fa- twitter"></i>
                                 </a></li>
 
-                                <li><a href="https://www.linkedin.com/" className="LinkedIn">LinkedIn
-                                <i className="fa fa- LinkedIn"></i>
+                                <li><a href="https://www.linkedin.com/" className="LinkedIn">
+                                <i class="fa-brands fa-linkedin"></i>
                                 </a></li>
-
-                                <li><a href="https://www.facebook.com/" className="Facebook">Facebook
-                                <i className="fa fa- Facebook"></i>
-                                </a></li>
+                                
 
                            </ul>
                         </div>
@@ -106,13 +93,10 @@ function About(){
                                 <i className="fa fa- twitter"></i>
                                 </a></li>
 
-                                <li><a href="https://www.linkedin.com/" className="LinkedIn">LinkedIn
-                                <i className="fa fa- LinkedIn"></i>
+                                <li><a href="https://www.linkedin.com/" className="LinkedIn">
+                                <i class="fa-brands fa-linkedin"></i>
                                 </a></li>
 
-                                <li><a href="https://www.facebook.com/" className="Facebook">Facebook
-                                <i className="fa fa- Facebook"></i>
-                                </a></li>
 
                            </ul>
                         </div>
@@ -125,4 +109,4 @@ function About(){
     
     )
 }
-export default About;
+export default About;

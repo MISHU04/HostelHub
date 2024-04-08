@@ -13,6 +13,3 @@
     object-fit: cover; object-position: center center;
     opacity: 1; transition: opacity 500ms ease 0s; max-height: 90vh;
 } */
-.wrapper{
-    background-image: url('back2.jpg');
-}
