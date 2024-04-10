@@ -6,6 +6,9 @@
     height: auto;
     width: 100%;
 }
+.section-title{
+    color: black;
+}
 .text-center{
     margin-top: 2%;
 }
