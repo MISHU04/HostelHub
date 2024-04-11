@@ -1,13 +1,17 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://127.0.0.1:27017/HostelHub")
+ connection = async()=>{
+  mongoose.connect("mongodb+srv://vijaysharma11702:lgMzwDKQkS7MphL1@hostelhub.csfaplv.mongodb.net/complaints?retryWrites=true&w=majority&appName=HostelHub")
 .then(() => {
   console.log('Connected to MongoDB');
 })
 .catch((error) => {
   console.error('Error connecting to MongoDB:', error);
 });
+const User = require('./models/User');
+}
+
 
 // Assuming you have a schema defined for User
-const User = require('./models/User');
 
+module.exports=connection;
