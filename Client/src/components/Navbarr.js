@@ -2,7 +2,6 @@ import { Component } from "react";
 import "./NavbarStyle.css";
 import { MenuItems } from "./MenuItems";
 import { Link } from "react-router-dom";
-// import hostel from "../components/hostel.jpg";
 class Navbarr extends Component{
     state = {clicked: false};
     handleClick = () =>{
