@@ -9,6 +9,7 @@ function Complaints() {
         contact: '',
         problem: ''
     });
+    const [alertMessage, setAlertMessage] = useState('');
 
     const handleChange = (e) => {
         setFormData({
@@ -35,9 +36,13 @@ function Complaints() {
             });
             const result = await response.json();
             console.log(result);
-            // Clear form data after successful submission
-            setFormData(
-                {
+
+            if (response.ok) {
+                setAlertMessage('Complaint submitted successfully');
+            } else {
+                setAlertMessage('Failed to submit complaint. Please try again later.');
+            }
+            setFormData({
                 names: '',
                 room: '',
                 roll: '',
@@ -46,83 +51,91 @@ function Complaints() {
             });
         } catch (error) {
             console.error('Error:', error);
+            setAlertMessage('An error occurred. Please try again later.');
         }
     };
 
-    return(
+    return (
         <>
-        <div className='wrap'>
-            <header>
-                <h2 className="logo" >
-                    {/* <img src={ganga1} className='img2'/> */}
-                </h2>
-            </header>
-            <div className="wrapper">
-                <div className="form-box login">
-                    <h2>What's Your Problem?</h2>
-                    <form onSubmit={handleSubmit}>
-                        <div className="input-box">
-                            <span className="icon"></span>
-                            <input
-                                type="text"
-                                name="names"
-                                value={formData.names}
-                                onChange={handleChange}
-                                required
-                                placeholder="You are known as..."
-                            />
-                        </div>
-                        <div className="input-box">
-                            <span className="icon"></span>
-                            <input
-                                type="number"
-                                name="room"
-                                value={formData.room}
-                                onChange={handleChange}
-                                required
-                                placeholder="Your Room Number?"
-                            />
-                        </div>
-                        <div className="input-box">
-                            <span className="icon"></span>
-                            <input
-                                type="number"
-                                name="roll"
-                                value={formData.roll}
-                                onChange={handleChange}
-                                required
-                                placeholder="Your Roll Number?"
-                            />
-                        </div>
-                        <div className="input-box">
-                            <span className="icon"></span>
-                            <input
-                                type="tel"
-                                name="contact"
-                                value={formData.contact}
-                                onChange={handleChange}
-                                required
-                                placeholder="You can be contacted through.."
-                            />
-                        </div>
-                        <div className="issue">
-                            <span className="icon"></span>
-                            <input
-                                type="text"
-                                maxLength={40}
-                                name="problem"
-                                value={formData.problem}
-                                onChange={handleChange}
-                                required
-                                placeholder="Problem..."
-                            />
-                        </div>
-                        <button type="submit" className="btn">Submit</button>
-                    </form>
+            <div className='wrap'>
+                <header>
+                    <h2 className="logo" >
+                       
+                    </h2>
+                </header>
+                <div className="wrapper">
+                    <div className="form-box login">
+                        <h2>What's Your Problem?</h2>
+                        <form onSubmit={handleSubmit}>
+                            <div className="input-box">
+                                <span className="icon"></span>
+                                <input
+                                    type="text"
+                                    name="names"
+                                    value={formData.names}
+                                    onChange={handleChange}
+                                    required
+                                    placeholder="You are known as..."
+                                />
+                            </div>
+                            <div className="input-box">
+                                <span className="icon"></span>
+                                <input
+                                    type="number"
+                                    name="room"
+                                    value={formData.room}
+                                    onChange={handleChange}
+                                    required
+                                    placeholder="Your Room Number?"
+                                />
+                            </div>
+                            <div className="input-box">
+                                <span className="icon"></span>
+                                <input
+                                    type="number"
+                                    name="roll"
+                                    value={formData.roll}
+                                    onChange={handleChange}
+                                    required
+                                    placeholder="Your Roll Number?"
+                                />
+                            </div>
+                            <div className="input-box">
+                                <span className="icon"></span>
+                                <input
+                                    type="tel"
+                                    name="contact"
+                                    value={formData.contact}
+                                    onChange={handleChange}
+                                    required
+                                    placeholder="You can be contacted through.."
+                                />
+                            </div>
+                            <div className="issue">
+                                <span className="icon"></span>
+                                <input
+                                    type="text"
+                                    maxLength={40}
+                                    name="problem"
+                                    value={formData.problem}
+                                    onChange={handleChange}
+                                    required
+                                    placeholder="Problem..."
+                                />
+                            </div>
+                            <button type="submit" className="btn">Submit</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </>
+
+            {/* Alert message */}
+            {alertMessage && (
+                <div className="alert">
+                    {alertMessage}
+                </div>
+            )}
+        </>
     );
 }
 

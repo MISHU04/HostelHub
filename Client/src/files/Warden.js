@@ -1,48 +1,57 @@
-// import React from 'react'
-// import './WardenStyle.css';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './WardenStyle.css';
 
-// export default function Warden() {
-//   return (
-//     <div>
-//       <>
-//       <div className='main'>
-//       <div className="wrapper">
-//     <div className="form-box login">
-//         <h2>Login as Warden</h2>
-//         <form action="#">
-//             <div className="input-box">
-//                 <span className="icon"></span>
-//                 <input type="text" required/>
-//                 <label>Name</label>
-//             </div>
-//             <div className="input-box">
-//                 <span className="icon"></span>
-//                 <input type="email" required/>
-//                 <label>Email</label>
-//             </div>
-//             {/* <div className="input-box">
-//                 <span className="icon"></span>
-//                 <input type="number" required/>
-//                 <label>Roll Number</label>
-//             </div> */}
-//             <div className="input-box">
-//                 <span className="icon"></span>
-//                 <input type="tel" name="phone" className='phone'  required />
-//                 <label>Phone Number</label>
-//             </div>
-//             {/* <div className="issue">
-//                 <span className="icon"></span>
-//                 <input type="text" maxLength={40} required/>
-//                 <label>Issue Avenue</label>
-//             </div> */}
-//             <button type="submit" className="btn">Submit</button>
-//         </form>
-//     </div>
-// </div>
-//       </div>
-//       <div>
-//       </div>
-//       </>
-//     </div>
-//   )
-// }
+const Warden = () => {
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('http://localhost:8000/warden', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        console.log('Login successful');
+       
+        navigate('/issues');
+      } else {
+        console.error('Login failed');
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+
+    }
+  };
+
+  return (
+    <div className="main">
+      <div className="wrapper">
+        <div className="form-box">
+          <h2>Warden Login</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="input-box">
+              <input type="text" id="username" name="username" required />
+              <label htmlFor="username">Username</label>
+            </div>
+            <div className="input-box">
+              <input type="password" id="password" name="password" required />
+              <label htmlFor="password">Password</label>
+            </div>
+            <button type="submit">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Warden;
