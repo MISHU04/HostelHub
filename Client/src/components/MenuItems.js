@@ -15,7 +15,7 @@ export const MenuItems = [
         title : "Mess",
         url : "/mess",
         cname : "nav-links",
-        icon : "fa-solid fa-plate-utensils",
+        icon : "fa-solid fa-utensils",
         id : "option1"
     },
     {

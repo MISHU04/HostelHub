@@ -11,7 +11,7 @@ function CarouselComponent() {
       <Carousel>
         <Carousel.Item>
           <img
-            
+            className='b'
             src={ganga1}
             alt="First slide"
           />
@@ -33,7 +33,7 @@ function CarouselComponent() {
         </Carousel.Item>
         <Carousel.Item>
           <img
-            
+            className='b'
             src={ganga1}
             alt="Third slide"
           />

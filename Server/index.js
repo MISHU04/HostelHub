@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require('cors');
+const { MongoClient } = require('mongodb'); // Import MongoClient from mongodb
 const app = express();
 const User = require('./models/User');
 const mongoose = require("mongoose");
@@ -31,27 +32,36 @@ app.post("/warden", async (req, res) => {
 
 app.post("/complaints", async (req, res) => {
   try {
-    const { name, rollNumber, roomNumber, contactNumber, issue } = req.body;
+    const { rollNumber, roomNumber, name } = req.body;
 
-    // Check if the student exists in the database
-    const student = await User.findOne({ name, rollNumber, roomNumber });
+    // Connect to MongoDB
+    const client = new MongoClient(mongoURI,{ useNewUrlParser:true, useUnifiedTopology:true });
+    await client.connect();
+
+    // Access the existing students collection
+    const existingStudentsCollection = client.db("complaints").collection("existingstudents");
+    
+    // Check if the student exists in the existing students collection
+    const student = await existingStudentsCollection.findOne({ rollNumber, name });
+
     if (!student) {
-      return res.status(400).json({ error: "Student not found or invalid name, roll number, or room number" });
+      await client.close();
+      return res.status(400).json({ error: "Student not found" });
     }
 
-    // Create a new complaint object
-    const newComplaint = new User({
-      name,
-      rollNumber,
-      roomNumber,
-      contactNumber,
-      issue
-    });
+    // Check if the student's room number matches the provided room number
+    if (student.roomNumber !== roomNumber) {
+      await client.close();
+      return res.status(400).json({ error: "Invalid room number" });
+    }
 
-    // Save the complaint to the database
-    const savedComplaint = await newComplaint.save();
-
-    res.status(201).json(savedComplaint);
+    // Create a new complaint instance using the data from the request body
+    const newUser = new User(req.body);
+    // Save the user to the database
+    const savedUser = await newUser.save(); // Fix: call save() function
+    // Send a success response with the saved user data
+    await client.close();
+    res.status(201).json(savedUser); // Fix: change req to res
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -98,5 +108,5 @@ app.delete("/complaints/:id", async (req, res) => {
 
 const PORT = 8000;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import './ComplaintStyles.css';
 
 function Complaints() {
@@ -10,6 +10,7 @@ function Complaints() {
         problem: ''
     });
     const [alertMessage, setAlertMessage] = useState('');
+    const [alertType, setAlertType] = useState('');
 
     const handleChange = (e) => {
         setFormData({
@@ -39,8 +40,10 @@ function Complaints() {
 
             if (response.ok) {
                 setAlertMessage('Complaint submitted successfully');
+                setAlertType('success');
             } else {
-                setAlertMessage('Failed to submit complaint. Please try again later.');
+                setAlertMessage('Failed to submit complaint.Invalid user.');
+                setAlertType('error');
             }
             setFormData({
                 names: '',
@@ -51,8 +54,14 @@ function Complaints() {
             });
         } catch (error) {
             console.error('Error:', error);
-            setAlertMessage('An error occurred. Please try again later.');
+            setAlertMessage('An error occurred. Invalid users.');
+            setAlertType('error');
         }
+
+        // Automatically hide the alert after 3 seconds
+        setTimeout(() => {
+            setAlertMessage('');
+        }, 3000);
     };
 
     return (
@@ -131,7 +140,7 @@ function Complaints() {
 
             {/* Alert message */}
             {alertMessage && (
-                <div className="alert">
+                <div className={`alert ${alertType}`}>
                     {alertMessage}
                 </div>
             )}
