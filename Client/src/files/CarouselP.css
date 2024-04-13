@@ -1,13 +1,9 @@
 .carousel-container {
   display: flex;
-  justify-content: center; /* Center contents horizontally */
-  align-items: center; /* Center contents vertically */
-  height: auto; /* Full viewport height */
-  position: absolute;
-  margin-top: 50%;
-  margin-left: 80%; 
-  background-attachment:fixed ;
-  width: 100%;
+  justify-content: center; 
+  align-items: center; 
+  height: auto; 
+  margin-top: 10%;
   object-fit: cover; object-position: center center;
   opacity: 1; transition: opacity 500ms ease 0s; max-height: 90vh;
 }
@@ -17,5 +13,5 @@
   background-color: rgba(0, 0, 0, 0.75);
   border-radius: 5px;
   padding: 10px;
-  width: 80%;
-}
+  width: 80%;
+ }
