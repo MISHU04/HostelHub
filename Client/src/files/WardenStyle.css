@@ -55,7 +55,7 @@
   position: relative;
   width: 100%;
   margin: 50px 0;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid rgb(198, 184, 184);
 }
 
 /* Label inside input box */
@@ -74,7 +74,27 @@
   top: -5px;
 }
 
-/* Input field */
+
 .input-box input {
   width: calc(100% - 40px);
+}
+.input-box label{
+  color: aliceblue;
+}
+.login-btn {
+  display: block;
+  width: 30%;
+  padding: 10px 10px;
+  margin: 20px auto 0; /* Updated margin to center horizontally and add space above */
+  border-radius: 10px;
+  background-color: cadetblue;
+  color: #e66688;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s; 
+}
+
+.login-btn:hover {
+  background-color: #4682b4;
 }

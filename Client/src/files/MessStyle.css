@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.page {
+    background: url('back2.avif') no-repeat 100% 100%;
+    background-size: cover;
+    padding: 40px 40px;
+    /* margin-top: 100px; */
+
+  }
+  
+  .extra-items{
+    align-items: start;
+}
+
+/* .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-top: 100px;
+    margin-bottom: -5.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
+} */
+
+.head{
+    background: lightgreen;
+    height: 40px;
+    font-size: 20px;
+}
+
+.pattern{
+    margin: 100px 70px;
+    pointer-events: none;
+    /* display:flex; */
+/* background: url("background1.jpg") no-repeat 100% 100%; */
+}
+.menu{
+    color: brown;
+   text-decoration:underline goldenrod;
+   right:30%;
+   margin-top: 3%;
+   font-family:"Roboto", sans-serif ;
+}
+.menu-bar{
+    /* background: violet; */
+    align-items: baseline;
+    display: flex;
+    margin-left: -402px;
+    justify-content: center;
+    /* margin: 8px; */
+    
+}
+.time{
+    justify-content: end;
+    font-size: 12px;
+    font-family:"Roboto", sans-serif;
+    color:burlywood;
+     /*right:100%;
+    margin-right: 100px; */
+    position: absolute;
+     top: 50px; 
+     right: 50px;
+
+     margin-top: 100px;
+    margin-bottom: -5.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--bs-heading-color);
+}
+.extra{
+    color: red;
+}
+.str{
+    color:rgb(4, 107, 107);
+}
+.abc{
+    display: flex;
+    align-items: first baseline;
+}
+
+  @media only screen and (max-width: 767px) {
+  .page {
+    background: url('back2.avif') no-repeat 100% 100%;
+    background-size: cover;
+    padding: 20px;
+    /* position:absolute; */
+    margin-top: 60px;
+}
+
+.page .menu {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 9px;
+}
+
+/* header{
+    
+   
+} */
+.menu-bar {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+}
+
+.time {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.head {
+    background: lightgreen;
+    height: 40px;
+    font-size: 16px;
+}
+
+.pattern {
+    margin: 20px;
+    overflow-x: auto;
+}
+
+.extra {
+    color: red;
+}
+
+.str {
+    color: rgb(4, 107, 107);
+}
+
+.abc {
+    display: flex;
+    align-items: baseline;
+}
+.tables {
+    width: 100%; /* Ensure table fills its container */
+    font-size: 14px; /* Decrease font size for better readability on smaller screens */
+}
+}

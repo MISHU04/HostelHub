@@ -124,7 +124,7 @@ function Complaints() {
                                 <span className="icon"></span>
                                 <input
                                     type="text"
-                                    maxLength={40}
+                                    maxLength={100}
                                     name="problem"
                                     value={formData.problem}
                                     onChange={handleChange}
@@ -147,5 +147,4 @@ function Complaints() {
         </>
     );
 }
-
 export default Complaints;
