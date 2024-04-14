@@ -47,3 +47,50 @@ body {
 .total-complaints-box{
   border-radius: 10%;
 }
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 80%; /* Adjust width for smaller screens */
+  }
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 480px) {
+  .wrapper {
+    width: 100%; /* Adjust width for mobile screens */
+  }
+  .form-box {
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+  /* Adjust other styles as needed for mobile devices */
+}
+
+/* Media query for Android phones */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+  /* Adjust styles specifically for Android phones in portrait mode */
+}
+
+/* Media query for adjusting to changes in window size on PC */
+@media screen and (max-width: 1200px) {
+  /* Adjust styles for smaller PC screens */
+}
+.logout-button {
+  background-color: #ff6347; /* Red color */
+  color: white;
+  margin-left: 100px;
+  padding: 15px 30px;
+  justify-content: center;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px; /* Adjust margin as needed */
+  position: fixed; /* Fixed positioning to keep it at the bottom */
+  bottom: 10px; /* 20px from the bottom */
+  left: 45%; /* Center horizontally */
+  transform: translateX(-50%); /* Center horizontally */
+}
+
+.logout-button:hover {
+  background-color: #d94025; /* Darker red color on hover */
+}

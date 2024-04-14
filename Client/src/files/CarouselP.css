@@ -4,14 +4,27 @@
   align-items: center; 
   height: auto; 
   margin-top: 10%;
-  object-fit: cover; object-position: center center;
-  opacity: 1; transition: opacity 500ms ease 0s; max-height: 90vh;
+  object-fit: cover; 
+  object-position: center center;
+  opacity: 1; 
+  transition: opacity 500ms ease 0s; 
+  max-height: 90vh;
 }
-/* Optional: Adjust carousel caption styles */
+
 .carousel-caption:hover {
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.75);
   border-radius: 5px;
   padding: 10px;
-  width: 80%;
- }
+  width: 80%;
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    margin-top: 5%; /* Adjusted margin for smaller screens */
+  }
+  
+  .carousel-caption:hover {
+    width: 90%; /* Adjusted width for smaller screens */
+  }
+}

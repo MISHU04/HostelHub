@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate from React Router
 import '../files/issues.css'; // Import the CSS file
 
 const Issues = () => {
   const [complaints, setComplaints] = useState([]);
+  const navigate = useNavigate(); // Initialize useNavigate hook
 
   useEffect(() => {
     fetch('http://localhost:8000/complaints')
       .then(response => response.json())
       .then(data => {
-        console.log('Data received from backend:', data); // Log the data received from backend
+        console.log('Data received from backend:', data);
         setComplaints(data);
       })
       .catch(error => {
@@ -33,37 +35,43 @@ const Issues = () => {
     }
   };
 
+  const handleLogout = () => {
+    // Redirect to the warden page
+    navigate('/warden');
+  };
+
   return (
     <div className="container">
       <h2>Complaints</h2>
+      <button onClick={handleLogout} className="logout-button">Logout</button>
       <div className="total-complaints-box">
         Total Complaints: {complaints.length}
       </div>
       <table className="complaints-table">
         <thead>
           <tr>
-            <th>#</th> {/* Add numbering header */}
+            <th>#</th>
             <th>Name</th>
             <th>Roll Number</th>
             <th>Room Number</th>
             <th>Contact Number</th>
             <th>Issue</th>
-            <th>Select</th> {/* Add a header for the checkboxes */}
+            <th>Select</th>
           </tr>
         </thead>
         <tbody>
           {complaints.map((complaint, index) => (
             <tr key={complaint._id}>
-              <td>{index + 1}</td> {/* Display numbering */}
+              <td>{index + 1}</td>
               <td>{complaint.name}</td>
               <td>{complaint.rollNumber}</td>
               <td>{complaint.roomNumber}</td>
-              <td>{complaint.phoneNumber}</td> {/* Display phoneNumber */}
-              <td>{complaint.issueAvenue}</td> {/* Display issueAvenue */}
+              <td>{complaint.phoneNumber}</td>
+              <td>{complaint.issueAvenue}</td>
               <td>
                 <input
                   type="checkbox"
-                  onChange={() => handleCheckboxChange(complaint._id)} // Handle checkbox change
+                  onChange={() => handleCheckboxChange(complaint._id)}
                 />
               </td>
             </tr>

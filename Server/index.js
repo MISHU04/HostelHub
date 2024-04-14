@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require('cors');
-const { MongoClient } = require('mongodb'); // Import MongoClient from mongodb
+const { MongoClient } = require('mongodb');
 const app = express();
 const User = require('./models/User');
 const mongoose = require("mongoose");
@@ -108,5 +108,5 @@ app.delete("/complaints/:id", async (req, res) => {
 
 const PORT = 8000;
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });

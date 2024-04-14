@@ -1,50 +1,32 @@
 .notice-ticker-container {
     width: 100%;
-    height: 200px; /* Adjust height as needed */
     display: flex;
-    justify-content: space-between; /* Arrange sections horizontally */
-    overflow: hidden;
+    justify-content: space-between; /* Arrange sections horizontally with space between */
   }
   
   .notice-section {
-    flex: 1; /* Each section takes up equal space */
-    display: flex;
-    flex-direction: column;
+    width: 48%; /* Set width for each section */
   }
   
   .notice-heading {
     margin-bottom: 10px;
+    text-align: center; /* Center the heading */
   }
   
   .notice-ticker {
-    overflow: hidden;
-    height: 100%; /* Fill the available height */
-    animation: scroll 10s linear infinite;
-  }
-  
-  @keyframes scroll {
-    from {
-      transform: translateY(0);
-    }
-    to {
-      transform: translateY(-100%);
-    }
+    overflow: auto; /* Add scrollbar if necessary */
+    height: 200px; /* Set height */
+    padding-top: 20px;
   }
   
   .notice-item {
-    display: flex;
-    align-items: center;
     padding: 5px;
-    border-radius: 5px;
-    background-color: #f0f0f0;
+    color: black;
+    text-decoration: none; /* Remove underline */
+    display: block; /* Ensure each item occupies its own line */
   }
   
-  .notice-category {
-    margin-right: 10px;
-    font-weight: bold;
+  .notice-item:hover {
+    background-color: #f0f0f0; /* Change background color on hover */
   }
   
-  .notice-message{
-    /* flex:1; */
-    background-color: none;
-  }
